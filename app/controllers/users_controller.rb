@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    puts(params[:user])
+    @user = User.create(params[:user])
     render json: @user
   end
 
@@ -19,9 +20,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update()
+    @user.update(:name)
     render json: @user
   end
+
 
 
 end

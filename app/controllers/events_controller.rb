@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
+    @event = Event.create(params[:event])
     render json: @event
   end
 
